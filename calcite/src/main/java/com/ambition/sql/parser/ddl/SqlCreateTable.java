@@ -107,10 +107,6 @@ public class SqlCreateTable extends SqlCreate {
         if (column instanceof SqlTableColumn) {
           SqlTableColumn tableColumn = (SqlTableColumn) column;
           columnName = tableColumn.getName().getSimple();
-          String typeName = tableColumn.getType().getTypeName().getSimple();
-          if (SqlColumnType.getType(typeName).isUnsupported()) {
-            throw new Exception("Not support type [" + typeName + "], at " + column.getParserPosition());
-          }
         } else if (column instanceof SqlBasicCall) {
           SqlBasicCall tableColumn = (SqlBasicCall) column;
           columnName = tableColumn.getOperands()[1].toString();

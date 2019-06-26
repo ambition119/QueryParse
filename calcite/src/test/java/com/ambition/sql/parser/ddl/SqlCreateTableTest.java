@@ -13,16 +13,15 @@ import org.junit.Test;
 public class SqlCreateTableTest {
   @Test
   public void testCreateTable() throws Exception {
+    String s1 = null;
+
     String ddl = "CREATE TABLE tbl1 (\n" +
         "  a bigint,\n" +
         "  h varchar, \n" +
-        "  g as 2 * (a + 1), \n" +
-        "  ts as timestamp, \n" +
-        "  b varchar,\n" +
-        "  proc as PROCTIME(), \n" +
-        "  PRIMARY KEY (a, b)\n" +
+        "  g bigint, \n" +
+        "  ts timestamp, \n" +
+        "  b varchar\n" +
         ")\n" +
-        "PARTITIONED BY (a, h)\n" +
         "WITH (\n" +
         "    connector = 'kafka', \n" +
         "    kafka.topic = 'log.test'\n" +

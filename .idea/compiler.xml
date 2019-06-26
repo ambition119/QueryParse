@@ -11,7 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="calcite" target="1.8" />
-      <module name="query.parse" target="1.8" />
+      <module name="query.parse" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
